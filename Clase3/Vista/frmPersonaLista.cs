@@ -20,5 +20,12 @@ namespace Clase3.Vista
         {
 
         }
+
+        private void frmPersonaLista_Load(object sender, EventArgs e)
+        {
+            this.personaTableAdapter.Fill(this.dsPruebaDB.Persona);
+            this.WindowState = FormWindowState.Maximized;
+            this.ControlBox = false;
+        }
     }
 }

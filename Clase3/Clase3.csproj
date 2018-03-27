@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\dsPruebaDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPruebaDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\frmPersonaLista.cs">
@@ -72,6 +77,18 @@
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Modelo\dsPruebaDB.xsc">
+      <DependentUpon>dsPruebaDB.xsd</DependentUpon>
+    </None>
+    <None Include="Modelo\dsPruebaDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPruebaDB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\dsPruebaDB.xss">
+      <DependentUpon>dsPruebaDB.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,7 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlador\" />
-    <Folder Include="Modelo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
