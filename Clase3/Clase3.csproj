@@ -51,6 +51,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\frmPatron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPatron.Designer.cs">
+      <DependentUpon>frmPatron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmPersonaDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPersonaDetalle.Designer.cs">
+      <DependentUpon>frmPersonaDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmPersonaLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmPatron.resx">
+      <DependentUpon>frmPatron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmPersonaDetalle.resx">
+      <DependentUpon>frmPersonaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPersonaLista.resx">
       <DependentUpon>frmPersonaLista.cs</DependentUpon>
     </EmbeddedResource>

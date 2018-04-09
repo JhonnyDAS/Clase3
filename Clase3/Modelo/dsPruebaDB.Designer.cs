@@ -1706,7 +1706,7 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genero", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Celular", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Celular", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Direccion", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Direccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaNac", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaNac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaNac", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaNac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Profesion", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Profesion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ci", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Ci", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -1882,7 +1882,7 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Ci, string Nombre, string Apellido, string Genero, global::System.Nullable<int> Celular, string Direccion, string FechaNac, string Profesion, string Original_Ci) {
+        public virtual int Update(string Ci, string Nombre, string Apellido, string Genero, global::System.Nullable<int> Celular, string Direccion, global::System.Nullable<global::System.DateTime> FechaNac, string Profesion, string Original_Ci) {
             if ((Ci == null)) {
                 throw new global::System.ArgumentNullException("Ci");
             }
@@ -1919,11 +1919,11 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Direccion));
             }
-            if ((FechaNac == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((FechaNac.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(FechaNac.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(FechaNac));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             if ((Profesion == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
@@ -1957,7 +1957,7 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, string Apellido, string Genero, global::System.Nullable<int> Celular, string Direccion, string FechaNac, string Profesion, string Original_Ci) {
+        public virtual int Update(string Nombre, string Apellido, string Genero, global::System.Nullable<int> Celular, string Direccion, global::System.Nullable<global::System.DateTime> FechaNac, string Profesion, string Original_Ci) {
             return this.Update(Original_Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion, Original_Ci);
         }
     }

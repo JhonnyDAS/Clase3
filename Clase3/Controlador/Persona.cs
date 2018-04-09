@@ -2,6 +2,7 @@
 using Clase3.Modelo.dsPruebaDBTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -71,6 +72,31 @@ namespace Clase3.Controlador
         }
         #endregion 
         #region Metodos
+        public DataTable Listar()
+        {
+            return _taPersona.GetData();
+        }
+        public void Modificar(string pCi)
+        {
+            try
+            {
+                _taPersona.Update(
+                        Ci,
+                        Nombre,
+                        Apellido,
+                        Genero,
+                        Celular,
+                        Direccion,
+                        FechaNac,
+                        Profesion,
+                        pCi
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
         public void Insertar()
         {
             try

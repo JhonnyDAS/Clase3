@@ -8,3 +8,4 @@ C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.exe
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.pdb
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPersonaLista.resources
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\bin\Debug\Clase3.exe.config
+C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPatron.resources
