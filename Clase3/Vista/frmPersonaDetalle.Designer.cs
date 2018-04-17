@@ -67,11 +67,84 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(138, 277);
+            this.btnAceptar.Location = new System.Drawing.Point(138, 335);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(219, 277);
+            this.btnCancelar.Location = new System.Drawing.Point(219, 335);
+            // 
+            // ciLabel
+            // 
+            ciLabel.AutoSize = true;
+            ciLabel.Location = new System.Drawing.Point(21, 65);
+            ciLabel.Name = "ciLabel";
+            ciLabel.Size = new System.Drawing.Size(19, 13);
+            ciLabel.TabIndex = 4;
+            ciLabel.Text = "Ci:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(21, 91);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 6;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // apellidoLabel
+            // 
+            apellidoLabel.AutoSize = true;
+            apellidoLabel.Location = new System.Drawing.Point(21, 117);
+            apellidoLabel.Name = "apellidoLabel";
+            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.TabIndex = 8;
+            apellidoLabel.Text = "Apellido:";
+            // 
+            // generoLabel
+            // 
+            generoLabel.AutoSize = true;
+            generoLabel.Location = new System.Drawing.Point(21, 143);
+            generoLabel.Name = "generoLabel";
+            generoLabel.Size = new System.Drawing.Size(45, 13);
+            generoLabel.TabIndex = 10;
+            generoLabel.Text = "Genero:";
+            // 
+            // celularLabel
+            // 
+            celularLabel.AutoSize = true;
+            celularLabel.Location = new System.Drawing.Point(21, 169);
+            celularLabel.Name = "celularLabel";
+            celularLabel.Size = new System.Drawing.Size(42, 13);
+            celularLabel.TabIndex = 12;
+            celularLabel.Text = "Celular:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(21, 247);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 14;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // fechaNacLabel
+            // 
+            fechaNacLabel.AutoSize = true;
+            fechaNacLabel.Location = new System.Drawing.Point(21, 196);
+            fechaNacLabel.Name = "fechaNacLabel";
+            fechaNacLabel.Size = new System.Drawing.Size(63, 13);
+            fechaNacLabel.TabIndex = 16;
+            fechaNacLabel.Text = "Fecha Nac:";
+            // 
+            // profesionLabel
+            // 
+            profesionLabel.AutoSize = true;
+            profesionLabel.Location = new System.Drawing.Point(21, 221);
+            profesionLabel.Name = "profesionLabel";
+            profesionLabel.Size = new System.Drawing.Size(54, 13);
+            profesionLabel.TabIndex = 18;
+            profesionLabel.Text = "Profesion:";
             // 
             // dsPruebaDB
             // 
@@ -94,15 +167,6 @@
             this.tableAdapterManager.ProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Clase3.Modelo.dsPruebaDBTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // ciLabel
-            // 
-            ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(21, 65);
-            ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(19, 13);
-            ciLabel.TabIndex = 4;
-            ciLabel.Text = "Ci:";
-            // 
             // ciTextBox
             // 
             this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personaBindingSource, "Ci", true));
@@ -110,15 +174,6 @@
             this.ciTextBox.Name = "ciTextBox";
             this.ciTextBox.Size = new System.Drawing.Size(200, 20);
             this.ciTextBox.TabIndex = 5;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(21, 91);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 6;
-            nombreLabel.Text = "Nombre:";
             // 
             // nombreTextBox
             // 
@@ -128,15 +183,6 @@
             this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
             this.nombreTextBox.TabIndex = 7;
             // 
-            // apellidoLabel
-            // 
-            apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(21, 117);
-            apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
-            apellidoLabel.TabIndex = 8;
-            apellidoLabel.Text = "Apellido:";
-            // 
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personaBindingSource, "Apellido", true));
@@ -144,15 +190,6 @@
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(200, 20);
             this.apellidoTextBox.TabIndex = 9;
-            // 
-            // generoLabel
-            // 
-            generoLabel.AutoSize = true;
-            generoLabel.Location = new System.Drawing.Point(21, 143);
-            generoLabel.Name = "generoLabel";
-            generoLabel.Size = new System.Drawing.Size(45, 13);
-            generoLabel.TabIndex = 10;
-            generoLabel.Text = "Genero:";
             // 
             // generoTextBox
             // 
@@ -162,15 +199,6 @@
             this.generoTextBox.Size = new System.Drawing.Size(200, 20);
             this.generoTextBox.TabIndex = 11;
             // 
-            // celularLabel
-            // 
-            celularLabel.AutoSize = true;
-            celularLabel.Location = new System.Drawing.Point(21, 169);
-            celularLabel.Name = "celularLabel";
-            celularLabel.Size = new System.Drawing.Size(42, 13);
-            celularLabel.TabIndex = 12;
-            celularLabel.Text = "Celular:";
-            // 
             // celularTextBox
             // 
             this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personaBindingSource, "Celular", true));
@@ -179,53 +207,28 @@
             this.celularTextBox.Size = new System.Drawing.Size(200, 20);
             this.celularTextBox.TabIndex = 13;
             // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(21, 195);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 14;
-            direccionLabel.Text = "Direccion:";
-            // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personaBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(90, 192);
+            this.direccionTextBox.Location = new System.Drawing.Point(90, 244);
+            this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(200, 79);
             this.direccionTextBox.TabIndex = 15;
-            // 
-            // fechaNacLabel
-            // 
-            fechaNacLabel.AutoSize = true;
-            fechaNacLabel.Location = new System.Drawing.Point(21, 222);
-            fechaNacLabel.Name = "fechaNacLabel";
-            fechaNacLabel.Size = new System.Drawing.Size(63, 13);
-            fechaNacLabel.TabIndex = 16;
-            fechaNacLabel.Text = "Fecha Nac:";
             // 
             // fechaNacDateTimePicker
             // 
             this.fechaNacDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.personaBindingSource, "FechaNac", true));
-            this.fechaNacDateTimePicker.Location = new System.Drawing.Point(90, 218);
+            this.fechaNacDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaNacDateTimePicker.Location = new System.Drawing.Point(90, 192);
             this.fechaNacDateTimePicker.Name = "fechaNacDateTimePicker";
             this.fechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.fechaNacDateTimePicker.TabIndex = 17;
             // 
-            // profesionLabel
-            // 
-            profesionLabel.AutoSize = true;
-            profesionLabel.Location = new System.Drawing.Point(21, 247);
-            profesionLabel.Name = "profesionLabel";
-            profesionLabel.Size = new System.Drawing.Size(54, 13);
-            profesionLabel.TabIndex = 18;
-            profesionLabel.Text = "Profesion:";
-            // 
             // profesionTextBox
             // 
             this.profesionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.personaBindingSource, "Profesion", true));
-            this.profesionTextBox.Location = new System.Drawing.Point(90, 244);
+            this.profesionTextBox.Location = new System.Drawing.Point(90, 218);
             this.profesionTextBox.Name = "profesionTextBox";
             this.profesionTextBox.Size = new System.Drawing.Size(200, 20);
             this.profesionTextBox.TabIndex = 19;
@@ -233,7 +236,7 @@
             // frmPersonaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(311, 312);
+            this.ClientSize = new System.Drawing.Size(311, 370);
             this.Controls.Add(ciLabel);
             this.Controls.Add(this.ciTextBox);
             this.Controls.Add(nombreLabel);

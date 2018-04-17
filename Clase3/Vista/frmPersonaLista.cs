@@ -23,9 +23,40 @@ namespace Clase3.Vista
 
         private void frmPersonaLista_Load(object sender, EventArgs e)
         {
-            this.personaTableAdapter.Fill(this.dsPruebaDB.Persona);
+            Listar();
             this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
+        }
+
+        private void Listar()
+        {
+            this.personaTableAdapter.Fill(this.dsPruebaDB.Persona);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmPersonaDetalle vn = new frmPersonaDetalle();
+            vn.ShowDialog();
+
+            Listar();
+        }
+
+        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                string nomCol = dgvGrilla.CurrentCell.OwningColumn.Name;
+                string ci = dgvGrilla.Rows[e.RowIndex].Cells[0].Value.ToString();
+                switch (nomCol)
+                {
+                    case "gEditar":
+                        frmPersonaDetalle vn = new frmPersonaDetalle(ci);
+                        vn.ShowDialog();
+
+                        Listar();
+                        break;
+                }
+            }
         }
     }
 }

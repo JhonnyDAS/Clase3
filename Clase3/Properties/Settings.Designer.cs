@@ -26,7 +26,7 @@ namespace Clase3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=pruebaDB_1;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JHONNY-DAS;Initial Catalog=pruebaDB;Integrated Security=True")]
         public string pruebaDBConnectionString {
             get {
                 return ((string)(this["pruebaDBConnectionString"]));

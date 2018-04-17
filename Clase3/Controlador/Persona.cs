@@ -114,7 +114,7 @@ namespace Clase3.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
         public void Eliminar(string pCi)
@@ -125,8 +125,12 @@ namespace Clase3.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
+        }
+        public DataTable BuscarPK(string pCi)
+        {
+            return _taPersona.GetDataByPK(pCi);
         }
         #endregion
     }

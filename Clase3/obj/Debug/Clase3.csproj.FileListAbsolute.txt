@@ -9,3 +9,15 @@ C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.pdb
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPersonaLista.resources
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\bin\Debug\Clase3.exe.config
 C:\Users\JhonnyLA\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPatron.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\bin\Debug\Clase3.exe.config
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.exe
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.pdb
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\bin\Debug\Clase3.exe
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\bin\Debug\Clase3.pdb
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.csprojResolveAssemblyReference.cache
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Properties.Resources.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPatron.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPersonaDetalle.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPersonaLista.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.Vista.frmPrincipal.resources
+C:\Users\Jhonny\Documents\Programas\Clase3\Clase3\obj\Debug\Clase3.csproj.GenerateResource.Cache
