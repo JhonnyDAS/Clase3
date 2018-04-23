@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clase3.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ namespace Clase3.Vista
 {
     public partial class frmPersonaLista : Form
     {
+        Persona _objPersona = new Persona();
         public frmPersonaLista()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace Clase3.Vista
 
         private void Listar()
         {
-            this.personaTableAdapter.Fill(this.dsPruebaDB.Persona);
+            this.personaBindingSource.DataSource = _objPersona.Listar(txtBuscar.Text);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -55,8 +57,20 @@ namespace Clase3.Vista
 
                         Listar();
                         break;
+
+                    case "gEliminar":
+                        if (DialogResult.OK == MessageBox.Show("¿Está seguro de eliminar este registro?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                            _objPersona.Eliminar(ci);
+
+                        Listar();
+                        break;
                 }
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Listar();
         }
     }
 }

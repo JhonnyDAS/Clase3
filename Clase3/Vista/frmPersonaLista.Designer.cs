@@ -30,13 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPruebaDB = new Clase3.Modelo.dsPruebaDB();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.personaTableAdapter = new Clase3.Modelo.dsPruebaDBTableAdapters.PersonaTableAdapter();
             this.ciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +42,11 @@
             this.fechaNacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gEliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPruebaDB = new Clase3.Modelo.dsPruebaDB();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.personaTableAdapter = new Clase3.Modelo.dsPruebaDBTableAdapters.PersonaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPruebaDB)).BeginInit();
@@ -65,14 +66,15 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(61, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(738, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtBuscar.Location = new System.Drawing.Point(61, 42);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(738, 20);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label2
             // 
@@ -101,7 +103,8 @@
             this.direccionDataGridViewTextBoxColumn,
             this.fechaNacDataGridViewTextBoxColumn,
             this.profesionDataGridViewTextBoxColumn,
-            this.gEditar});
+            this.gEditar,
+            this.gEliminar});
             this.dgvGrilla.DataSource = this.personaBindingSource;
             this.dgvGrilla.Location = new System.Drawing.Point(12, 68);
             this.dgvGrilla.Name = "dgvGrilla";
@@ -109,31 +112,6 @@
             this.dgvGrilla.Size = new System.Drawing.Size(868, 320);
             this.dgvGrilla.TabIndex = 3;
             this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
-            // 
-            // personaBindingSource
-            // 
-            this.personaBindingSource.DataMember = "Persona";
-            this.personaBindingSource.DataSource = this.dsPruebaDB;
-            // 
-            // dsPruebaDB
-            // 
-            this.dsPruebaDB.DataSetName = "dsPruebaDB";
-            this.dsPruebaDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(805, 40);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 4;
-            this.btnNuevo.Text = "(+) Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // personaTableAdapter
-            // 
-            this.personaTableAdapter.ClearBeforeFill = true;
             // 
             // ciDataGridViewTextBoxColumn
             // 
@@ -199,6 +177,39 @@
             this.gEditar.ReadOnly = true;
             this.gEditar.Width = 40;
             // 
+            // gEliminar
+            // 
+            this.gEliminar.HeaderText = "";
+            this.gEliminar.Image = global::Clase3.Properties.Resources.close_window_24;
+            this.gEliminar.Name = "gEliminar";
+            this.gEliminar.ReadOnly = true;
+            this.gEliminar.Width = 40;
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataMember = "Persona";
+            this.personaBindingSource.DataSource = this.dsPruebaDB;
+            // 
+            // dsPruebaDB
+            // 
+            this.dsPruebaDB.DataSetName = "dsPruebaDB";
+            this.dsPruebaDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.Location = new System.Drawing.Point(805, 40);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 4;
+            this.btnNuevo.Text = "(+) Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // personaTableAdapter
+            // 
+            this.personaTableAdapter.ClearBeforeFill = true;
+            // 
             // frmPersonaLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,7 +218,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Name = "frmPersonaLista";
             this.Text = "LISTA DE PERSONAS";
@@ -223,7 +234,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnNuevo;
@@ -239,5 +250,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profesionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn gEditar;
+        private System.Windows.Forms.DataGridViewImageColumn gEliminar;
     }
 }

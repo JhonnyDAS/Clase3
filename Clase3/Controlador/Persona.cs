@@ -76,6 +76,10 @@ namespace Clase3.Controlador
         {
             return _taPersona.GetData();
         }
+        public DataTable Listar(string pBuscar)
+        {
+            return _taPersona.GetDataByBuscar(pBuscar);
+        }
         public void Modificar(string pCi)
         {
             try

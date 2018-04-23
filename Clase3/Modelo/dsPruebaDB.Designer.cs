@@ -1723,7 +1723,7 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FROM" +
@@ -1731,10 +1731,17 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesi" +
-                "on\r\nFROM            Persona\r\nWHERE        (Ci = @Ci)";
+            this._commandCollection[1].CommandText = "SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion \r\nFR" +
+                "OM dbo.Persona\r\nWHERE Ci LIKE \'%\'+@parm+\'%\' OR Nombre LIKE \'%\'+@parm+\'%\' OR Apel" +
+                "lido LIKE \'%\'+@parm+\'%\'";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ci", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Ci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@parm", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Ci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesi" +
+                "on\r\nFROM            Persona\r\nWHERE        (Ci = @Ci)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ci", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Ci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1765,8 +1772,44 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPK(dsPruebaDB.PersonaDataTable dataTable, string Ci) {
+        public virtual int FillByBuscar(dsPruebaDB.PersonaDataTable dataTable, string parm) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((parm == null)) {
+                throw new global::System.ArgumentNullException("parm");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(parm));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPruebaDB.PersonaDataTable GetDataByBuscar(string parm) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((parm == null)) {
+                throw new global::System.ArgumentNullException("parm");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(parm));
+            }
+            dsPruebaDB.PersonaDataTable dataTable = new dsPruebaDB.PersonaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPK(dsPruebaDB.PersonaDataTable dataTable, string Ci) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Ci == null)) {
                 throw new global::System.ArgumentNullException("Ci");
             }
@@ -1785,7 +1828,7 @@ SELECT Ci, Nombre, Apellido, Genero, Celular, Direccion, FechaNac, Profesion FRO
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual dsPruebaDB.PersonaDataTable GetDataByPK(string Ci) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Ci == null)) {
                 throw new global::System.ArgumentNullException("Ci");
             }
